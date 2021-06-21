@@ -1,13 +1,13 @@
 'use strict';
 
-/*
-  @param {string} path
-  @return {boolean}
-*/
+/**
+ *@param {string} path
+ @return {boolean}
+ */
 
 function isPathCrossing(path) {
     const array = [];
-    //createArray(array, path);
+    createArray(array, path);
     addArray(array, path);
     return array;
 

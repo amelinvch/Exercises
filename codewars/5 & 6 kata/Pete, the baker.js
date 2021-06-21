@@ -1,22 +1,15 @@
 //https://www.codewars.com/kata/525c65e51bf619685c000059/train/javascript
 
 function cakes(recipe, available) {
-    let max = 0;
-    let flag = true;
-    while (flag) {
-        for (let key in recipe) {
-            if (available[key] == undefined) {
-                return 0;
-            } else {
-                if (available[key] >= 0) {
-                    available[key] -= recipe[key];
-                } else {
-                    return max - 1;
-                }
-            }
+    let max = [];
+    for (let key in recipe) {
+        if (available[key] == undefined) {
+            return 0;
+        } else {
+            max.push(Math.floor(available[key] / recipe[key]));
         }
-        max++;
     }
+    return Math.min(...max);
 }
 
 

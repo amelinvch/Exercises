@@ -2,6 +2,7 @@
  * @param {string} s
  * @return {boolean}
  */
+
 var isValid = function(s) {
     const array = s.split('');
     let array2 = [];

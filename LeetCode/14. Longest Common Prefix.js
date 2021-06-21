@@ -11,4 +11,4 @@ let longestCommonPrefix = function(strs) {
     return result;
 };
 console.log(longestCommonPrefix(["dog", "racecar", "car"]));
-// console.log(longestCommonPrefix(["flower", "flow", "flight"]));
+console.log(longestCommonPrefix(["flower", "flow", "flight"]));

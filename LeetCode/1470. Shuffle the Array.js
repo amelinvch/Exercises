@@ -3,6 +3,7 @@
  * @param {number} n
  * @return {number[]}
  */
+
 const shuffle = function(nums, n) {
     let array = [];
     for (let i = 0; i < n; i++) {
