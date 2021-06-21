@@ -1,3 +1,5 @@
+//https://www.codewars.com/kata/520b9d2ad5c005041100000f/train/javascript
+
 function pigIt(str) {
     const arrayStr = str.split(' ');
     for (let ind in arrayStr) {
@@ -16,5 +18,3 @@ function pigIt(str) {
 
 console.log(pigIt('Pig latin is cool')); // igPay atinlay siay oolcay
 console.log(pigIt('Hello world !')); // elloHay orldway !
-
-//https://www.codewars.com/kata/520b9d2ad5c005041100000f/train/javascript

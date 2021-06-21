@@ -1,8 +1,4 @@
 //https://www.codewars.com/kata/523a86aa4230ebb5420001e1/train/javascript
-// function anagrams(word, words) {
-
-//     const result = words.filter(fillters(wo));
-// }
 
 function anagrams(word, words) {
     function isBigEnough(x) {
