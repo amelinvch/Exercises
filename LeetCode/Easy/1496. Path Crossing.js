@@ -50,4 +50,29 @@ function proverka(array, i) {
 
 }
 
+//Var 2
+/*
+var isPathCrossing = function(path) {
+    let visited = [
+        [0, 0]
+    ];
+    let x = 0;
+    let y = 0;
+    for (let i = 0; i < path.length; i++) {
+        if (path[i] === 'N') { visited.push([x, ++y]); }
+        if (path[i] === 'S') { visited.push([x, --y]); }
+        if (path[i] === 'E') { visited.push([++x, y]); }
+        if (path[i] === 'W') { visited.push([--x, y]); }
+        console.log(visited);
+        for (let j = 0; j < visited.length - 1; j++) {
+            if (x === visited[j][0] && y === visited[j][1]) {
+                console.log(`${visited[j]} - ${visited[i]}`);
+                return true;
+            }
+        }
+    }
+    return false;
+};
+*/
+
 console.log(isPathCrossing('NES'));
