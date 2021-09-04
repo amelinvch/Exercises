@@ -10,6 +10,7 @@ function permutations(string) {
         numRepet *= i;
     }
     for (let i = 0; i < numRepet; i++) {
+        console.log(arrLettes, arrLettes[i], arrLettes[i + 1]);
         arrLettes[i] = arrLettes[i + 1];
         arrApp.push(arrLettes.join(''));
     }
