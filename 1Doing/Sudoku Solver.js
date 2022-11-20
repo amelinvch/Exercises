@@ -8,8 +8,49 @@
  * possibilities on unknowns) and can be solved with a brute-force approach.
 */
 
-function sudoku(puzzle) {
-  return puzzle
+"use strict"
+
+function sudoku(grid) {
+  const admis_matrix = admissible_num(grid);
+  //console.log(admis_matrix);
+
+  const matrix_admissible = make_matrix_admissible(grid, admis_matrix);
+  console.log(matrix_admissible);
+  return grid;
+}
+
+function make_matrix_admissible(grid, admis_matrix){
+  const numbers_arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  return grid.map(row => {
+    return row.map(elem => {
+      if(elem === 0) {
+
+        numbers_arr.filter(function(item, pos) {
+          return a.indexOf(item) == pos;
+        })
+
+      }
+    })
+  })
+}
+
+function admissible_num(grid){
+  const grid_len = grid.length,
+        admis_matrix = {row: {}, col: {}};
+  for(let ind = 0; ind < grid_len; ind++){
+    const row_admis = [],
+          col_admis = [];
+          
+    for (let j = ind; j < grid_len; j++) {
+      let row_elem = grid[ind][j],
+          col_elem = grid[j][ind];
+      if(+row_elem !== 0) row_admis.push(row_elem);
+      if(+col_elem !== 0) col_admis.push(col_elem);
+    }
+    admis_matrix.row[ind] = row_admis;
+    admis_matrix.col[ind] = col_admis;
+  }
+  return admis_matrix;
 }
 
 (function checkAnswer(){
@@ -35,5 +76,5 @@ function sudoku(puzzle) {
     [2,8,7,4,1,9,6,3,5],
     [3,4,5,2,8,6,1,7,9]];
 
-  console.log(JSON.stringify(sudoku(puzzle)) === JSON.stringify(solution))
+  console.log(JSON.stringify(sudoku(puzzle)) === JSON.stringify(solution));
 })()
