@@ -18,3 +18,8 @@ function permutations(string) {
   permute(arr_lettes);
   return Array.isArray(res) ? [...new Set(res)] : res.slice('');
 }
+
+console.log(permutations('a'));
+console.log(permutations('ab'));
+console.log(permutations('abc'));
+console.log(permutations('aabb'));
