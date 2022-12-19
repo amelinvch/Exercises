@@ -7,12 +7,6 @@
  * @return {boolean}
  */
 
-/**
- * Алгоритм
- * 1. Для начала мы создадим массив или обьект в котором у нас будут лежать точки и все точни будут показывать с какими они связаны
- * 2. Мы деламе сестуму пути и просто ищем более подхощий вариат
- */
-
 var sortIdObj = (edges, variblePath = {}) => {
   edges.forEach(elem => {
     variblePath[+elem[0]] = !!variblePath[elem[0]] ? [...variblePath[elem[0]], elem] : [elem];
@@ -40,7 +34,6 @@ var validPath = function(n, edges, source, destination) {
   const arrPathIncludes = nextStepInPath(variblePath, source, destination);
   return JSON.stringify(arrPathIncludes).includes(true);
 };
-
 
 console.log(validPath(3, [[0,1],[1,2],[2,0]], 0, 2)) //true
 console.log(validPath(6, [[0,1],[0,2],[3,5],[5,4],[4,3]], 0, 5)) //false
