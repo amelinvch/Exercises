@@ -22,8 +22,6 @@ var possibleBipartition = function(n, dislikes) {
 
     colored[node] = color;
     const neis = graph[node-1];
-    console.log(node, neis, color, colored);
-
     for (let ind = 0; ind < neis.length; ind++) {
       const nei = neis[ind];
       if(!dfs(nei, (color^1))){ return false; }
