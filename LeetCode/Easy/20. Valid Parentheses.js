@@ -3,6 +3,20 @@
  * @return {boolean}
  */
 
+const isValid = (str) => {
+    const stack = [];
+
+    for (let ind=0; ind<str.length; ind++) {
+        const lit = str[ind];
+        if(lit === '(' || lit === '{' || lit === '['){
+            stack.push(lit); 
+            continue;
+        } 
+           
+    };
+}
+
+/** 
 var isValid = function(s) {
     const array = s.split('');
     let array2 = [];
@@ -28,4 +42,5 @@ var isValid = function(s) {
     }
     return array2.length === 0;
 };
+*/
 console.log(isValid('{[]}'));
