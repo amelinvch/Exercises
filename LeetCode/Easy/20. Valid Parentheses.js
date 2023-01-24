@@ -3,17 +3,23 @@
  * @return {boolean}
  */
 
-const isValid = (str) => {
-    const stack = [];
-
-    for (let ind=0; ind<str.length; ind++) {
-        const lit = str[ind];
-        if(lit === '(' || lit === '{' || lit === '['){
-            stack.push(lit); 
-            continue;
-        } 
-           
+const isValid = (str, stack = []) => {
+    const map = {
+        '}': '{',
+        ']': '[',
+        ')': '(',
     };
+
+    for (const char of str) {
+        const isBracket = (char in map);
+        if (!isBracket) { stack.push(char); continue; }
+        const isEqual = (stack[stack.length - 1] === map[char])
+        if (isEqual) { stack.pop(); continue; }
+
+        return false;
+    };
+
+    return (stack.length === 0);
 }
 
 /** 
